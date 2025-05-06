@@ -64,9 +64,6 @@
     const nombreSelect = document.getElementById("nombre");
     const nuevoFields = document.getElementById("nuevoFields");
 
-    // Dummy items (will be replaced by fetch call later)
-    const itemList = ["Manzana", "Avena", "Yogur", "Huevo"];
-
     // Populate dropdown
     function populateItems(items) {
       items.forEach(item => {
@@ -82,8 +79,6 @@
       nuevoOption.textContent = "Nuevo";
       nombreSelect.appendChild(nuevoOption);
     }
-
-    populateItems(itemList);
 
     // Show/hide extra fields based on selection
     nombreSelect.addEventListener("change", () => {
@@ -119,7 +114,7 @@
       console.log("DATA TO SUBMIT:", data);
 
       // 🔗 Send data to your Google Apps Script here
-      // fetch("YOUR_SCRIPT_URL", {
+      // fetch("https://script.google.com/macros/s/AKfycbxxEQ2wq_UkFrVY4x1vIzb3I72FBn5ieUJsfJqwbAdxDTy3LjWkDcb23bIvk-jArp4/exec", {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },
       //   body: JSON.stringify(data)
@@ -132,6 +127,6 @@
       // .catch(err => alert("Error al enviar: " + err));
     });
   </script>
-
+  <script src="main.js"></script>
 </body>
 </html>
