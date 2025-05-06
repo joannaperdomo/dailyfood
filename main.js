@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dropdown = document.getElementById("nombre");
   const nuevoFields = document.getElementById("nuevo-alimento");
 
-  const API_URL = "https://script.google.com/macros/s/AKfycbxqixHjWFh1k5Uqp9geVHh4rYwAQJq6yOpP8YwtJFCUDQ_tqdBa7061KEFgBN1UAXft/exec"; // Replace with your actual Web App URL
+  const API_URL = "https://script.google.com/macros/s/AKfycbyzDCn_iIw3jwCpK1s5gUZ2vhSmEMuNAhOiWDVAvDWdebkqh6eRdoVanrO0fGfBpzI5/exec"; // Replace with your actual Web App URL
 
     try {
       const response = await fetch(API_URL);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const comidaSelect = document.getElementById("comida");
     const porcionInput = document.getElementById("porcion");
   
-    const API_URL = "https://script.google.com/macros/s/AKfycbxqixHjWFh1k5Uqp9geVHh4rYwAQJq6yOpP8YwtJFCUDQ_tqdBa7061KEFgBN1UAXft/exec"; // Replace with your actual Web App URL
+    const API_URL = "https://script.google.com/macros/s/AKfycbyzDCn_iIw3jwCpK1s5gUZ2vhSmEMuNAhOiWDVAvDWdebkqh6eRdoVanrO0fGfBpzI5/exec"; // Replace with your actual Web App URL
   
     // Handle form submission
     form.addEventListener("submit", async (event) => {
