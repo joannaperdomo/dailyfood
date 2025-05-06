@@ -39,4 +39,57 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   });
+
+// CODIGO PARA LOGEAR AL SHEETS
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const form = document.getElementById("food-form");
+    const dropdown = document.getElementById("nombre");
+    const comidaSelect = document.getElementById("comida");
+    const porcionInput = document.getElementById("porcion");
+  
+    const API_URL = "https://script.google.com/macros/s/AKfycbxqixHjWFh1k5Uqp9geVHh4rYwAQJq6yOpP8YwtJFCUDQ_tqdBa7061KEFgBN1UAXft/exec"; // Replace with your actual Web App URL
+  
+    // Handle form submission
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Prevent the form from submitting the default way
+  
+      // Collect form data
+      const comida = comidaSelect.value;
+      const nombre = dropdown.value;
+      const porcion = parseFloat(porcionInput.value);
+      const fecha = new Date().toLocaleDateString("en-GB"); // Format: day/month/year
+  
+      // Prepare the data to be sent to the Google Sheets log-test sheet
+      const formData = {
+        comida,
+        nombre,
+        porcion,
+        fecha,
+      };
+  
+      // Send the data to the Google Apps Script Web App using POST
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData), // Send the collected form data as JSON
+        });
+  
+        const result = await response.json(); // Assuming the response is JSON
+        if (result.success) {
+          alert("Datos enviados con éxito");
+          form.reset(); // Reset the form after successful submission
+        } else {
+          alert("Hubo un error al enviar los datos.");
+        }
+      } catch (error) {
+        console.error("Error al enviar los datos:", error);
+        alert("Hubo un error al intentar enviar los datos.");
+      }
+    });
+  });
+  
   
